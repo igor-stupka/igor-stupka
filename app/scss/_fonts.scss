@@ -1,0 +1,19 @@
+/* Connect font "Gotham Pro Regular"; */
+@font-face {
+font-family: 'Gotham Pro Regular';
+src: url('../fonts/GothamProRegular/GothamPro.eot');
+src: url('../fonts/GothamProRegular/GothamPro.eot?#iefix') format('embedded-opentype'),
+url('../fonts/GothamProRegular/GothamPro.woff') format('woff');
+font-weight: normal;
+font-style: normal;
+}
+
+/* Connect font "Gotham Pro Black"; */
+@font-face {
+font-family: 'Gotham Pro Black';
+src: url('../fonts/GothamProBlack/GothamPro-Black.eot');
+src: url('../fonts/GothamProBlack/GothamPro-Black.eot?#iefix') format('embedded-opentype'),
+url('../fonts/GothamProBlack/GothamPro-Black.woff') format('woff');
+font-weight: normal;
+font-style: normal;
+}

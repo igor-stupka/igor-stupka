@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <title>Ігор Ступка - фронтенд розробних адаптивних веб-сайтів і сторінок, PSD to HTML, HTML5, CSS3, jQuery</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="Ігор Ступка - фронтенд веб-розробник. Спеціалізуюся на створенні адаптивних сайтів та сторінок з використанням HTML5, CSS3, jQuery">
+    <meta name="page-topic" content="Ігор Ступка - фронтенд веб-розробник. Спеціалізуюся на створенні адаптивних сайтів та сторінок з використанням HTML5, CSS3, jQuery">
+    <meta name="topic" content="Ігор Ступка - фронтенд веб-розробник. Спеціалізуюся на створенні адаптивних сайтів та сторінок з використанням HTML5, CSS3, jQuery">
+    <meta name="author" content="Ігор Ступка">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--OG-->
+    <meta property="og:title" content="Ігор Ступка: фронтенд веб-розробка - Україна">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Спеціалізуюся на створенні адаптивних сайтів та сторінок з використанням HTML5, CSS3, jQuery">
+    <meta property="og:image" content="img/IgorStupka.jpg">
+    <meta property="og:site_name" content="Ігор Ступка - фронтенд веб-розробник. Спеціалізуюся на створенні адаптивних сайтів та сторінок з використанням HTML5, CSS3, jQuery">
+    <meta property="og:url" content="https://igor-stupka.github.io/">
+    <!--/OG-->
+    <!--favicon-->
+    <link rel="apple-touch-icon" sizes="192x192" href="img/favicons/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/favicons/favicon-192x192.png">
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <!--/favicon-->
+    <!--Critical CSS-->
+    <style>
+    main.page-swiper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    main.page-swiper .page-pagination {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        right: 30px;
+    }
+
+    main.page-swiper .page-pagination .swiper-pagination-bullet {
+        margin: 7px 0;
+    }
+
+    .swiper-pagination {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    .swiper-pagination .swiper-pagination-bullet {
+        background: none;
+        border: 3px solid #fff;
+        width: 17px;
+        height: 17px;
+        -webkit-transition: all .5s ease;
+        -o-transition: all .5s ease;
+        transition: all .5s ease;
+        opacity: 1;
+    }
+
+    .swiper-pagination .swiper-pagination-bullet:hover {
+        background: rgba(255, 255, 255, 0.4);
+    }
+
+    .swiper-pagination .swiper-pagination-bullet-active {
+        background: #fff;
+    }
+
+    .me {
+        background: #F55F49;
+    }
+
+    .me .nice-to-meet-wrap {
+        height: -webkit-calc(100% - 110px);
+        height: calc(100% - 110px);
+        position: relative;
+    }
+
+    .me .nice-to-meet {
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translatey(-50%);
+        -ms-transform: translatey(-50%);
+        transform: translatey(-50%);
+        z-index: 15;
+        width: 100%;
+    }
+
+    .me img {
+        display: block;
+        margin: 0 auto;
+        max-width: 300px;
+        width: 100%;
+        height: auto;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+    }
+
+    .me p {
+        max-width: 500px;
+        width: 100%;
+        margin-bottom: 10px;
+        line-height: 1.2;
+    }
+
+    .me .contact-btn {
+        position: relative;
+        margin-top: 20px;
+    }
+
+    .me .contact-btn:active {
+        color: #BF2929;
+    }
+
+    .me .contact-btn:hover {
+        color: #F55F49;
+    }
+
+    .mnu-btn {
+        z-index: 110;
+        width: 60px;
+        height: 60px;
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: all 0.5s ease-in-out 0s;
+        -o-transition: all 0.5s ease-in-out 0s;
+        transition: all 0.5s ease-in-out 0s;
+        cursor: pointer;
+        vertical-align: top;
+        position: fixed;
+        top: 50px;
+        right: 50px;
+        border: 3px solid #fff;
+        background: none;
+        outline: none;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .mnu-btn span {
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 40px;
+        background: #fff;
+        opacity: 1;
+        left: 7px;
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        transition: all 0.4s;
+    }
+
+    .mnu-btn span:nth-child(1) {
+        top: 15.5px;
+    }
+
+    .mnu-btn span:nth-child(2) {
+        top: 25.5px;
+    }
+
+    .mnu-btn span:nth-child(3) {
+        top: 35.5px;
+    }
+
+    .mnu-btn:hover span:nth-child(1) {
+        top: 12px;
+    }
+
+    .mnu-btn:hover span:nth-child(3) {
+        top: 39px;
+    }
+
+    .mnu-btn.opened-btn span:nth-child(1) {
+        top: 25px;
+        -webkit-transform: rotate(135deg);
+        -ms-transform: rotate(135deg);
+        transform: rotate(135deg);
+    }
+
+    .mnu-btn.opened-btn span:nth-child(2) {
+        width: 0;
+    }
+
+    .mnu-btn.opened-btn span:nth-child(3) {
+        top: 25px;
+        -webkit-transform: rotate(-135deg);
+        -ms-transform: rotate(-135deg);
+        transform: rotate(-135deg);
+    }
+
+    .bg-motto {
+        font-family: 'Gotham Pro Black';
+        text-align: right;
+        font-size: 150px;
+        letter-spacing: -7px;
+        word-spacing: -8px;
+        position: absolute;
+        line-height: 120px;
+        max-width: 605px;
+        width: 100%;
+        bottom: 20px;
+        right: 30px;
+        color: rgba(255, 255, 255, 0.2);
+        z-index: 5;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .page-aside {
+        position: fixed;
+        top: 0;
+        right: -500px;
+        height: 100%;
+        width: 500px;
+        z-index: 100;
+        background-color: rgba(0, 0, 0, 0.8);
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 50px;
+        -webkit-transition: all .4s;
+        -o-transition: all .4s;
+        transition: all .4s;
+        text-align: center;
+    }
+
+    .page-aside::before {
+        content: 'menu';
+        font-family: 'Gotham Pro Black';
+        font-size: 145px;
+        letter-spacing: 4px;
+        -webkit-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+        -webkit-transform-origin: top left;
+        -ms-transform-origin: top left;
+        transform-origin: top left;
+        position: absolute;
+        color: rgba(255, 255, 255, 0.1);
+        bottom: -40px;
+        right: -200px;
+        -webkit-transition: all 1.1s;
+        -o-transition: all 1.1s;
+        transition: all 1.1s;
+    }
+
+    .page-aside .contact-btn {
+        bottom: 50px;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+
+    .page-aside.open {
+        right: 0;
+    }
+
+    .page-aside.open::before {
+        right: -10px;
+    }
+
+    .page-aside .contact-btn:hover {
+        color: #000;
+    }
+
+    .contact-btn {
+        position: absolute;
+        display: inline-block;
+        border: 3px solid #fff;
+        color: #fff;
+        padding: 15px 25px;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-weight: 600;
+        outline: none;
+        text-align: center;
+        z-index: 10;
+    }
+
+    .contact-btn:active {
+        background-color: #fff;
+        color: #000;
+    }
+
+    .contact-btn:hover {
+        background-color: #fff;
+    }
+    </style>
+    <!--/Critical CSS-->
+    <link rel="stylesheet" href="css/libs.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <!-- <div id="loader">
+        <div id="loaderInner">ЗАВАНТАЖЕННЯ</div>
+    </div>-->
+    <button class="mnu-btn" title="Меню сайту">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <aside class="page-aside">
+        <ul class="language">
+            <!--<li><a href="/en">en</a><li>-->
+            <li><a href="/ru">ru</a></li>
+            <li><a href="/" class="current-lang">ua</a></li>
+        </ul>
+        <nav>
+            <ul>
+                <li><a href="#me">Ігор Ступка</a></li>
+                <li><a href="#why-me">Чому я?</a></li>
+                <li><a href="#approach">Підхід</a></li>
+                <li><a href="#skills">Навички</a></li>
+                <li><a href="#portfolio">Портфоліо</a></li>
+                <li><a href="#services">Послуги</a></li>
+                <!--<li><a href="#contacts">Контакти</a></li>-->
+            </ul>
+        </nav>
+        <a href="#contacts" class="contact-btn">зв'язатися</a>
+    </aside>
+    <main class="swiper-container page-swiper">
+        <div class="swiper-wrapper page-swiper-wrapper">
+            <section class="swiper-slide me" data-hash="me">
+                <div class="container">
+                    <div class="section-title">
+                        <h1 data-swiper-parallax-x="100" data-swiper-parallax-duration="1500">Ігор Ступка</h1>
+                    </div>
+                    <div class="nice-to-meet-wrap">
+                        <div class="row nice-to-meet">
+                            <div class="col-lg-6">
+                                <img src="img/IgorStupka.jpg" alt="Ступка Ігор" title="Ступка Ігор - розробка та верстка сайтів">
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="about-me">
+                                    <p>Привіт! Я Ігор. Веб-розробник з 2-річним досвідом роботи. Працюю з замовниками з усього світу, створюючи для них високопродуктивні та інтерактивні веб-сайти, які грамотно працюють на всіх платформах і пристроях.</p>
+                                    <p>Хоч я і знайомий з використанням конструкторів сайтів, мої веб-проекти, в першу чергу, кодуються за допомогою HTML5, CSS3 та JavaScript. Вважаю це більш професійним підходом.</p>
+                                    <p>Тож, якщо ти маєш дизайн і хочеш перетворити його в адаптивну веб-сторінку, я зможу в цьому допомогти.</p>
+                                    <p>Тобі потрібно просто написати мені:</p>
+                                    <a href="#contacts" class="contact-btn">Написати йому</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-motto" data-swiper-parallax="-100" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="2000">
+                    do what you love
+                </div>
+            </section>
+            <section class="swiper-slide why-me" data-hash="why-me">
+                <div class="container">
+                    <div class="section-title">
+                        <h2 data-swiper-parallax-x="100" data-swiper-parallax-duration="1500">Чому я?</h2>
+                    </div>
+                    <ul>
+                        <li>
+                            <p>Хочу пишатися кожним рядком свого коду, саме тому мої проекти мають високий рівень якості.</p>
+                        </li>
+                        <li>
+                            <p>Для мене важливо, щоб клієнт був задоволений не тільки кінцевим результатом, а й процесом співпраці.
+                            </p>
+                        </li>
+                        <li>
+                            <p>Із розумінням та відповідальністю ставлюся до оцінки термінів та дотримання дедлайнів.</p>
+                        </li>
+                        <li>
+                            <p>Після прийняття угоди постійно знаходжуся на зв'язку до останньої '<b> ; </b>'.</p>
+                        </li>
+                        <li>
+                            <p>Не стою на місці, вивчаю нове, підвищую кваліфікацію, щоб робити роботу ще якісніше для тебе.</p>
+                        </li>
+                        <li>
+                            <p>Не маю негативних відгуків на фріланс-біржах.</p>
+                        </li>
+                        <li>
+                            <p>Беруся тільки за ті проекти, які готовий завершити на 100%.</p>
+                        </li>
+                        <li>
+                            <p>Я люблю верстати сайти, це приносить мені задоволення, тому результатом будемо задоволені ми обоє.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-motto" data-swiper-parallax="-200" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="2000">
+                    love what you do
+                </div>
+            </section>
+            <section class="swiper-slide approach" data-hash="approach">
+                <div class="container">
+                    <div class="section-title">
+                        <h2 data-swiper-parallax-x="100" data-swiper-parallax-duration="1500">Підхід</h2>
+                    </div>
+                    <ul class="row">
+                        <li class="col-lg-3 col-md-6">
+                            <span data-swiper-parallax="-200" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="500">1</span>
+                            <div class="flaticon"></div>
+                            <h3>Сучасність</h3>
+                            <p> Використання найактуальніших у веб-індустрії технологій</p>
+                        </li>
+                        <li class="col-lg-3 col-md-6">
+                            <span data-swiper-parallax="-200" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="1000">2</span>
+                            <div class="flaticon"></div>
+                            <h3>Зрозумілість</h3>
+                            <p>Чистота, коментованість та структурованість вихідного коду</p>
+                        </li>
+                        <li class="col-lg-3 col-md-6">
+                            <span data-swiper-parallax="-200" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="1500">3</span>
+                            <div class="flaticon"></div>
+                            <h3>Адаптивність</h3>
+                            <p>Чудове відображення сайту на планшетах та смартфонах</p>
+                        </li>
+                        <li class="col-lg-3 col-md-6">
+                            <span data-swiper-parallax="-200" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="2000">4</span>
+                            <div class="flaticon"></div>
+                            <h3>Кросбраузерність</h3>
+                            <p>Підтримка всіма сучасними браузерами всіх операційних систем</p>
+                        </li>
+                        <li class="col-lg-3 col-md-6">
+                            <span data-swiper-parallax="-200" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="500">5</span>
+                            <div class="flaticon"></div>
+                            <h3>Оптимізованість</h3>
+                            <p>Прискорення роботи шляхом мінімізації розміру файлів</p>
+                        </li>
+                        <li class="col-lg-3 col-md-6">
+                            <span data-swiper-parallax="-200" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="1000">6</span>
+                            <div class="flaticon"></div>
+                            <h3>Валідність</h3>
+                            <p>Відповідність вихідного коду сайту нормам і правилам W3C</p>
+                        </li>
+                        <li class="col-lg-3 col-md-6">
+                            <span data-swiper-parallax="-200" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="1500">7</span>
+                            <div class="flaticon"></div>
+                            <h3>SЕО-орієнтованість</h3>
+                            <p>Врахування оптимізації сайту для пошукових систем при верстці</p>
+                        </li>
+                        <li class="col-lg-3 col-md-6">
+                            <span data-swiper-parallax="-200" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="2000">8</span>
+                            <div class="flaticon"></div>
+                            <h3>Структурованість</h3>
+                            <p>Логічна та зручна структура папок і файлів проекту</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="swiper-slide skills" data-hash="skills">
+                <div class="container">
+                    <div class="section-title">
+                        <h2 data-swiper-parallax-x="100" data-swiper-parallax-duration="1500">Навички</h2>
+                    </div>
+                    <ul class="row">
+                        <li class="col-lg-2 col-md-4 col-sm-3">
+                            <div class="circle"></div>
+                            <img src="img/skills/1.png" alt="">
+                            <a class="swipe-skill-name" href="https://www.w3schools.com/html/html5_intro.asp" target="_blank">html5</a>
+                        </li>
+                        <li class="col-lg-2 col-md-4 col-sm-3">
+                            <div class="circle"></div>
+                            <img src="img/skills/2.png" alt="">
+                            <a class="swipe-skill-name" href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets" target="_blank">css3</a>
+                        </li>
+                        <li class="col-lg-2 col-md-4 col-sm-3">
+                            <div class="circle"></div>
+                            <img src="img/skills/12.png" alt="">
+                            <a class="swipe-skill-name" href="https://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
+                        </li>
+                        <li class="col-lg-2 col-md-4 col-sm-3">
+                            <div class="circle"></div>
+                            <img src="img/skills/3.png" alt="">
+                            <a class="swipe-skill-name" href="https://sass-lang.com/" target="_blank">sass</a>
+                        </li>
+                        <li class="col-lg-2 col-md-4 col-sm-3">
+                            <div class="circle"></div>
+                            <img src="img/skills/4.png" alt="">
+                            <a class="swipe-skill-name" href="https://gulpjs.com/" target="_blank">gulp</a>
+                        </li>
+                        <li class="col-lg-2 col-md-4 col-sm-3">
+                            <div class="circle"></div>
+                            <img src="img/skills/5.png" alt="">
+                            <a class="swipe-skill-name" href="https://wordpress.org/" target="_blank">wordpress</a>
+                        </li>
+                        <li class="col-lg-2 col-md-4 col-sm-3">
+                            <div class="circle"></div>
+                            <img src="img/skills/6.png" alt="">
+                            <a class="swipe-skill-name" href="https://en.wikipedia.org/wiki/PHP" target="_blank">php</a>
+                        </li>
+                        <li class="col-lg-2 col-md-4 col-sm-3">
+                            <div class="circle"></div>
+                            <img src="img/skills/7.png" alt="">
+                            <a class="swipe-skill-name" href="https://jquery.com/" target="_blank">jquery</a>
+                        </li>
+                        <li class="col-lg-2 col-md-4 col-sm-3">
+                            <div class="circle"></div><img src="img/skills/8.png" alt="">
+                            <a class="swipe-skill-name" href="https://getbootstrap.com/" target="_blank">bootstrap</a>
+                        </li>
+                        <li class="col-lg-2 col-md-4 col-sm-3">
+                            <div class="circle"></div>
+                            <img src="img/skills/9.png" alt="">
+                            <a class="swipe-skill-name" href="https://git-scm.com/" target="_blank">GIT</a>
+                        </li>
+                        <li class="col-lg-2 col-md-4 col-sm-3">
+                            <div class="circle"></div>
+                            <img src="img/skills/10.png" alt="">
+                            <a class="swipe-skill-name" href="https://en.bem.info/" target="_blank">bem</a>
+                        </li>
+                        <li class="col-lg-2 col-md-4 col-sm-3">
+                            <div class="circle"></div>
+                            <img src="img/skills/11.png" alt="">
+                            <div class="swipe-skill-name">
+                                <a href="https://www.adobe.com/ru/products/photoshop.html" target="_blank">Photoshop</a>
+                                <br>
+                                <a href="https://avocode.com/" target="_blank">Avocode</a>
+                                <br>
+                                <a href="https://zeplin.io/" target="_blank">Zeplin</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-motto" data-swiper-parallax="-200" data-swiper-parallax-duration="1500">
+                    code is poetry
+                </div>
+            </section>
+            <section class="swiper-slide portfolio" data-hash="portfolio">
+                <div class="container">
+                    <div class="section-title">
+                        <h2 data-swiper-parallax-x="100" data-swiper-parallax-duration="1500">Портфоліо</h2>
+                    </div>
+                    <div class="swiper-container portfolio-swiper">
+                        <div class="swiper-wrapper">
+                            <!--+++++++WORK1+++++++-->
+                            <!--+++++++WORK1+++++++-->
+                            <!--+++++++WORK1+++++++-->
+                            <!--+++++++WORK1+++++++-->
+                            <!--+++++++WORK1+++++++-->
+                            <article class="swiper-slide portfolio-slide">
+                                <h3><a href="https://dotaslash.com/" target="_blank">dotaslash</a></h3>
+                                <p>Створення сайту для мобільного додатку "DotaSlash". Для замовника важливу роль грало відображення сайту на пристроях з retina-дисплеями. Також в даній роботі мною був створений кастомний jQuery-валідатор форми зворотнього зв'язку. Пишаюся цим проектом.</p>
+                                <h4>використано:</h4>
+                                <ul>
+                                    <li>HTML5</li>
+                                    <li>CSS3</li>
+                                    <li>SCSS</li>
+                                    <li>jQuery</li>
+                                    <li>PHP</li>
+                                    <li>AJAX</li>
+                                    <li>Emmet</li>
+                                    <li>Zeplin</li>
+                                </ul>
+                                <div class="screens">
+                                    <img class="desktop" src="img/portfolio/work1/desktop.png" alt="dotaslash-desk" data-swiper-parallax-x="-200" data-swiper-parallax-duration="1400">
+                                    <img class="mobile" src="img/portfolio/work1/mobile.png" alt="dotaslash-mob" data-swiper-parallax-y="100" data-swiper-parallax-duration="1400">
+                                </div>
+                            </article>
+                            <!--+++++++WORK2+++++++-->
+                            <!--+++++++WORK2+++++++-->
+                            <!--+++++++WORK2+++++++-->
+                            <!--+++++++WORK2+++++++-->
+                            <!--+++++++WORK2+++++++-->
+                            <article class="swiper-slide portfolio-slide">
+                                <h3>UrbanStyle</h3>
+                                <p>Верстка сторінок інтернет-магазину з продажу рюкзаків: головна сторінка, кошик, картка товару. Основною вимогою замовника була кросбраузерність та адаптивність верстки. Наразі проект знаходиться на етапі бек-енд налаштування.</p>
+                                <h4>використано:</h4>
+                                <ul>
+                                    <li>HTML5</li>
+                                    <li>CSS3</li>
+                                    <li>SCSS</li>
+                                    <li>jQuery</li>
+                                    <li>Bootstrap 4</li>
+                                    <li>FlexBox</li>
+                                    <li>GULP</li>
+                                    <li>Avocode</li>
+                                    <li>Emmet</li>
+                                </ul>
+                                <div class="screens">
+                                    <img class="desktop" src="img/portfolio/work2/desktop.png" alt="UrbanStyle-desk" data-swiper-parallax-x="-200" data-swiper-parallax-duration="1400">
+                                    <img class="mobile" src="img/portfolio/work2/mobile.png" alt="UrbanStyle-mob" data-swiper-parallax-y="100" data-swiper-parallax-duration="1400">
+                                </div>
+                            </article>
+                            <!--+++++++WORK3+++++++-->
+                            <!--+++++++WORK3+++++++-->
+                            <!--+++++++WORK3+++++++-->
+                            <!--+++++++WORK3+++++++-->
+                            <!--+++++++WORK3+++++++-->
+                            <article class="swiper-slide portfolio-slide">
+                                <h3><a href="http://petanium.ru/" target="_blank">petanium.ru</a></h3>
+                                <p>Адаптивна верстка сторінок сайту онлайн-гри "Petanium" по PSD-макетам для майбутньої посадки на CMS. Один з моїх улюблених проектів.</p>
+                                <h4>використано:</h4>
+                                <ul>
+                                    <li>HTML5</li>
+                                    <li>CSS3</li>
+                                    <li>SCSS</li>
+                                    <li>jQuery</li>
+                                    <li>Bootstrap 4</li>
+                                    <li>FlexBox</li>
+                                    <li>GULP</li>
+                                    <li>Avocode</li>
+                                </ul>
+                                <div class="screens">
+                                    <img class="desktop" src="img/portfolio/work3/desktop.png" alt="petanium-desk" data-swiper-parallax-x="-200" data-swiper-parallax-duration="1400">
+                                    <img class="mobile" src="img/portfolio/work3/mobile.png" alt="petanium-mob" data-swiper-parallax-y="100" data-swiper-parallax-duration="1400">
+                                </div>
+                            </article>
+                            <!--+++++++WORK4+++++++-->
+                            <!--+++++++WORK4+++++++-->
+                            <!--+++++++WORK4+++++++-->
+                            <!--+++++++WORK4+++++++-->
+                            <!--+++++++WORK4+++++++-->
+                            <article class="swiper-slide portfolio-slide">
+                                <h3><a href="http://nplon.pro/" target="_blank">NPLON.PRO</a></h3>
+                                <p>Один з моїх перших проектів. NPLON.PRO – це лендінг пейдж для для замовлення послуг консалтингового агентства. Цей проект мені настільки подобається, що через деякий час після його верстки, я переверстав його "з нуля", використовуючи вже нові набуті підходи, технології та досвід.</p>
+                                <h4>використано:</h4>
+                                <ul>
+                                    <li>HTML5</li>
+                                    <li>CSS3</li>
+                                    <li>jQuery</li>
+                                    <li>PHP</li>
+                                    <li>Bootstrap 4</li>
+                                    <li>Avocode</li>
+                                </ul>
+                                <div class="screens">
+                                    <img class="desktop" src="img/portfolio/work4/desktop.png" alt="NPLON-desk" data-swiper-parallax-x="-200" data-swiper-parallax-duration="1400">
+                                    <img class="mobile" src="img/portfolio/work4/mobile.png" alt="NPLON-mob" data-swiper-parallax-y="100" data-swiper-parallax-duration="1400">
+                                </div>
+                            </article>
+                            <!--+++++++WORK5+++++++-->
+                            <!--+++++++WORK5+++++++-->
+                            <!--+++++++WORK5+++++++-->
+                            <!--+++++++WORK5+++++++-->
+                            <!--+++++++WORK5+++++++-->
+                            <article class="swiper-slide portfolio-slide">
+                                <h3><a href="http://nplon.pro/pp/" target="_blank">#поститьпросто</a></h3>
+                                <p>Лендінг для онлайн-курсу з безпосередньою презентацією та подальшою реєстрацією учасників. Також налаштував форму зворотнього зв’язку – усі дані з анкет учасників автоматично надсилаються замовнику на пошту для зручності опрацювання заявок. </p>
+                                <h4>використано:</h4>
+                                <ul>
+                                    <li>HTML5</li>
+                                    <li>CSS3</li>
+                                    <li>SCSS</li>
+                                    <li>jQuery</li>
+                                    <li>PHP</li>
+                                    <li>AJAX</li>
+                                    <li>FlexBox</li>
+                                    <li>GULP</li>
+                                    <li>Zeplin</li>
+                                </ul>
+                                <div class="screens">
+                                    <img class="desktop" src="img/portfolio/work5/desktop.png" alt="#поститьпросто-desk" data-swiper-parallax-x="-200" data-swiper-parallax-duration="1400">
+                                    <img class="mobile" src="img/portfolio/work5/mobile.png" alt="#поститьпросто-mob" data-swiper-parallax-y="100" data-swiper-parallax-duration="1400">
+                                </div>
+                            </article>
+                            <!--+++++++WORK6+++++++-->
+                            <!--+++++++WORK6+++++++-->
+                            <!--+++++++WORK6+++++++-->
+                            <!--+++++++WORK6+++++++-->
+                            <!--+++++++WORK6+++++++-->
+                            <article class="swiper-slide portfolio-slide">
+                                <h3><a href="http://perm-mining.com" target="_blank">perm-mining.com</a></h3>
+                                <p>Верстка та програмування чіткого, добре продуманого і цілеспрямованого лендінга з потужним програмним скелетом по PSD-макету. Було задіяно декілька хитрих плагінів, мета яких – затримати користувача на сторінці і максимально схилити до придбання товару.</p>
+                                <h4>використано:</h4>
+                                <ul>
+                                    <li>HTML5</li>
+                                    <li>CSS3</li>
+                                    <li>SCSS</li>
+                                    <li>jQuery</li>
+                                    <li>PHP</li>
+                                    <li>AJAX</li>
+                                    <li>FlexBox</li>
+                                    <li>GULP</li>
+                                    <li>Avocode</li>
+                                </ul>
+                                <div class="screens">
+                                    <img class="desktop" src="img/portfolio/work6/desktop.png" alt="perm-mining-desk" data-swiper-parallax-x="-200" data-swiper-parallax-duration="1400">
+                                    <img class="mobile" src="img/portfolio/work6/mobile.png" alt="perm-mining-mob" data-swiper-parallax-y="100" data-swiper-parallax-duration="1400">
+                                </div>
+                            </article>
+                            <!--+++++++WORK7+++++++-->
+                            <!--+++++++WORK7+++++++-->
+                            <!--+++++++WORK7+++++++-->
+                            <!--+++++++WORK7+++++++-->
+                            <!--+++++++WORK7+++++++-->
+                            <article class="swiper-slide portfolio-slide">
+                                <h3>JustReally</h3>
+                                <p>Створення сторінок сайту для пошуку "побутових фрілансерів" по готових PSD-макетах, використовуючи BEM-методологію. Наразі проект знаходиться на етапі бек-енд налаштування.</p>
+                                <h4>використано:</h4>
+                                <ul>
+                                    <li>HTML5</li>
+                                    <li>CSS3</li>
+                                    <li>SCSS</li>
+                                    <li>Bootstrap</li>
+                                    <li>BEM</li>
+                                    <li>jQuery</li>
+                                    <li>FlexBox</li>
+                                    <li>GULP</li>
+                                    <li>Avocode</li>
+                                </ul>
+                                <div class="screens">
+                                    <img class="desktop" src="img/portfolio/work7/desktop.png" alt="JustReally-desk" data-swiper-parallax-x="-200" data-swiper-parallax-duration="1400">
+                                    <img class="mobile" src="img/portfolio/work7/mobile.png" alt="JustReally-mob" data-swiper-parallax-y="100" data-swiper-parallax-duration="1400">
+                                </div>
+                            </article>
+                        </div>
+                        <!--<div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>-->
+                    </div>
+                    <div class="swiper-pagination portfolio-pagination"></div>
+                </div>
+            </section>
+            <section class="swiper-slide services" data-hash="services">
+                <div class="container">
+                    <div class="section-title">
+                        <h2 data-swiper-parallax-x="100" data-swiper-parallax-duration="1500">Послуги</h2>
+                    </div>
+                    <ul class="row">
+                        <li class="col-lg-6">
+                            <a href="#contacts">
+                                <span class="icon"></span>
+                                <h3>Верстка<br> сайту</h3>
+                                <p>Створення лендінг-пейдж, корпоративного / промо / бізнес-сайту або сайту-візитки по готовому шаблону.</p>
+                            </a>
+                        </li>
+                        <li class="col-lg-6">
+                            <a href="#contacts">
+                                <span class="icon"></span>
+                                <h3>Встановлення на <br>WordPress</h3>
+                                <p>«Натягування» верстки на CMS WordPress для зручного редагування та додавання контенту через адмін-пенель.</p>
+                            </a>
+                        </li>
+                        <li class="col-lg-6">
+                            <a href="#contacts">
+                                <span class="icon"></span>
+                                <h3>Мобільна <br>адаптація</h3>
+                                <p>Налаштування коректного відображення сторінки на смартфонах та планшетах.</p>
+                            </a>
+                        </li>
+                        <li class="col-lg-6">
+                            <a href="#contacts">
+                                <span class="icon"></span>
+                                <h3>Допрацювання <br>верстки</h3>
+                                <p>Правка та завершення недопрацьованих <br>веб-проектів.</p>
+                            </a>
+                        </li>
+                        <li class="col-lg-6">
+                            <a href="#contacts">
+                                <span class="icon"></span>
+                                <h3>Парсинг <br>сайту</h3>
+                                <p>Копіювання та подальше редагування веб-сайту з мережі.</p>
+                            </a>
+                        </li>
+                        <li class="col-lg-6">
+                            <a href="#contacts">
+                                <span class="icon"></span>
+                                <h3>Встановлення <br>на хостинг</h3>
+                                <p>Розміщення готової верстки на твоєму хостингу.</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-motto" data-swiper-parallax="-200" data-swiper-parallax-duration="2000">
+                    let's start
+                </div>
+            </section>
+            <section class="swiper-slide contacts" data-hash="contacts">
+                <div class="container">
+                    <div class="section-title">
+                        <h2 data-swiper-parallax-x="100" data-swiper-parallax-duration="2000">Контакти</h2>
+                    </div>
+                    <div class="centerer">
+                        <div class="write-me">
+                            <p>Якщо в тебе є цікавий для реалізації проект або ти просто хочеш сказати привіт, напиши мені в соцмережах або скористайся цією формою: </p>
+                        </div>
+                        <form class="contact-form" autocomplete="off">
+                            <fieldset>
+                                <div class="input-field-wrap">
+                                    <input class="input-field" id="name" type="text" name="name" placeholder="Ім'я" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ім\'я'">
+                                </div>
+                                <div class="input-field-wrap">
+                                    <input class="input-field" id="email" type="email" name="email" placeholder="E-mail" onfocus="this.placeholder = ''" onblur="this.placeholder = 'E-mail'">
+                                </div>
+                                <div class="input-field-wrap">
+                                    <textarea class="input-field" id="message" name="message" placeholder="Повідомлення" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Повідомлення'"></textarea>
+                                </div>
+                                <input type="submit" class="send-btn" value="Надіслати">
+                            </fieldset>
+                            <p id="nameInfo" class="info">Як до тебе звертатися?</p>
+                            <p id="emailInfo" class="info">Введи свою e-mail адресу</p>
+                            <p id="invalidEmailInfo" class="info">Некоректний e-mail</p>
+                            <p id="aboutInfo" class="info">Напиши кілька слів</p>
+                            <h6 class="ty">Дякую за повідомлення, <i id="client-name"></i>! <br>Скоро відповім!</h6>
+                        </form>
+                    </div>
+                </div>
+                               <ul class="social-links">
+                    <li><a  data-swiper-parallax="-150" data-swiper-parallax-duration="600" href="https://t.me/igor_stop" title="Telegram" target="_blank"></a></li>
+                    <li><a  data-swiper-parallax="-150" data-swiper-parallax-duration="800" href="mailto:igorstupka1@gmail.com " title="Gmail " target="_blank"></a></li>
+                    <li><a  data-swiper-parallax="-150" data-swiper-parallax-duration="1000" href="https://www.facebook.com/profile.php?id=100004501921748 " title="Facebook " target="_blank"></a></li>
+                    <li><a  data-swiper-parallax="-150" data-swiper-parallax-duration="1200" href="https://github.com/igor-stupka/" title="GitHub" target="_blank"></a></li>
+                    <li><a  data-swiper-parallax="-150" data-swiper-parallax-duration="1400" href="https://freelancehunt.com/freelancer/igor-stupka.html" title="FreelanceHunt" target="_blank"></a></li>
+                    <li><a  data-swiper-parallax="-150" data-swiper-parallax-duration="1600" href="skype:kijimoshike1" title="Skype" target="_blank"></a></li>
+                </ul>
+                <div class="bg-motto" data-swiper-parallax="-200" data-swiper-parallax-duration="2000">
+                    work hard!
+                </div>
+            </section>
+        </div>
+        <div class="swiper-pagination page-pagination"></div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="js/libs.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/tilt.jquery.js"></script>
+</body>
+
+</html>
